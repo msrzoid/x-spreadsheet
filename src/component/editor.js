@@ -249,10 +249,13 @@ export default class Editor {
   }
 
   setCell(cell, validator) {
+    this.cell = cell;
+    if (cell && 'editable' in cell && cell.editable === false) {
+      return;
+    }
     // console.log('::', validator);
     const { el, datepicker, suggest } = this;
     el.show();
-    this.cell = cell;
     const text = (cell && cell.text) || '';
     this.setText(text);
 

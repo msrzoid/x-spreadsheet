@@ -106,6 +106,9 @@ class Rows {
 
   setCellText(ri, ci, text) {
     const cell = this.getCellOrNew(ri, ci);
+    if (cell && 'editable' in cell && cell.editable === false) {
+      return;
+    }
     cell.text = text;
   }
 
