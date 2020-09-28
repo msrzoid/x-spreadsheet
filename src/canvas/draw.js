@@ -367,13 +367,14 @@ class Draw {
     const { ctx } = this;
     const { x, y, width } = box;
     const sx = x + width - 1;
+    console.log(x, y, width, sx);
     ctx.save();
     ctx.beginPath();
     ctx.moveTo(npx(sx - 8), npx(y - 1));
     ctx.lineTo(npx(sx), npx(y - 1));
     ctx.lineTo(npx(sx), npx(y + 8));
     ctx.closePath();
-    ctx.fillStyle = 'rgba(0, 255, 0, .85)';
+    // ctx.fillStyle = 'rgba(0, 255, 0, .85)';
     ctx.fill();
     ctx.restore();
   }
