@@ -4,6 +4,7 @@ declare module 'x-data-spreadsheet' {
     showToolbar?: boolean;
     showGrid?: boolean;
     showContextmenu?: boolean;
+    showAddMoreSheet?: boolean;
     view?: {
       height: () => number;
       width: () => number;
@@ -190,7 +191,7 @@ declare module 'x-data-spreadsheet' {
   }
   global {
     interface Window {
-      x_spreadsheet(container: string | HTMLElement, opts?: Options): Spreadsheet; 
+      x_spreadsheet(container: string | HTMLElement, opts?: Options): Spreadsheet;
     }
   }
 }
