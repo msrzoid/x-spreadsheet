@@ -163,6 +163,11 @@ declare module 'x-data-spreadsheet' {
       text: string,
       sheetIndex?: number
     ): string;
+
+    setSelector(
+        rowIndex: number,
+        colIndex: number
+    ): void;
     /**
      * remove current sheet
      */

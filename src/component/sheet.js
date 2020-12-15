@@ -904,6 +904,10 @@ export default class Sheet {
     selectorSet.call(this, false, 0, 0);
   }
 
+  setSelector(ri, ci) {
+    selectorSet.call(this, false, ri, ci);
+  }
+
   on(eventName, func) {
     this.eventMap.set(eventName, func);
     return this;

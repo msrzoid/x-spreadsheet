@@ -92,6 +92,10 @@ class Spreadsheet {
     return this.datas[sheetIndex].getCellStyle(ri, ci);
   }
 
+  setSelector(ri, ci) {
+    this.sheet.setSelector(ri, ci);
+  }
+
   reRender() {
     this.sheet.table.render();
     return this;
