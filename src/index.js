@@ -37,6 +37,10 @@ class Spreadsheet {
     rootEl.child(this.bottombar.el);
   }
 
+  static locale(lang, message) {
+    locale(lang, message);
+  }
+
   addSheet(name, active = true) {
     const n = name || `sheet${this.sheetIndex}`;
     const d = new DataProxy(n, this.options);
@@ -44,7 +48,6 @@ class Spreadsheet {
       this.sheet.trigger('change', ...args);
     };
     this.datas.push(d);
-    console.log('innnnnnnnnnnnnnnn:', n, d, this.datas);
     this.bottombar.addItem(n, active);
     this.sheetIndex += 1;
     return d;
@@ -106,6 +109,10 @@ class Spreadsheet {
     return this;
   }
 
+  addValidation(validations) {
+    this.sheet.addValidation(validations);
+  }
+
   validate() {
     const { validations } = this.data;
     return validations.errors.size <= 0;
@@ -114,10 +121,6 @@ class Spreadsheet {
   change(cb) {
     this.sheet.on('change', cb);
     return this;
-  }
-
-  static locale(lang, message) {
-    locale(lang, message);
   }
 }
 

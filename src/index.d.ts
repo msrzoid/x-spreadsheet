@@ -168,6 +168,12 @@ declare module 'x-data-spreadsheet' {
         rowIndex: number,
         colIndex: number
     ): void;
+
+    reRender(): void;
+
+    validate(): void;
+
+    addValidation(validations: object): void;
     /**
      * remove current sheet
      */

@@ -967,6 +967,12 @@ export default class Sheet {
     return { width: data.viewWidth(), height: data.viewHeight() };
   }
 
+  addValidation(validation) {
+    const mode = validation.mode || '';
+    const ref = Array.isArray(validation.refs) ? validation.refs.join(',') : validation.refs;
+    this.data.addValidation(mode, ref, validation);
+  }
+
   getTableOffset() {
     const { rows, cols } = this.data;
     const { width, height } = this.getRect();
