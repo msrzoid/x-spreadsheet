@@ -385,6 +385,7 @@ body {
 }
 .x-spreadsheet-suggest {
   width: 200px;
+  height: 200px;
 }
 .x-spreadsheet-filter {
   border: 1px solid #e9e9e9;

@@ -48,7 +48,7 @@
         }
       };
       // x_spreadsheet.locale('zh-cn');
-      var xs = x_spreadsheet('#x-spreadsheet-demo', {showToolbar: true, showGrid: true})
+      var xs = x_spreadsheet('#x-spreadsheet-demo', {showToolbar: true, showGrid: true, showAddMoreSheet: false})
         .loadData([{
           freeze: 'B3',
           styles: [
@@ -83,6 +83,7 @@
           console.log('text:', text, ', ri: ', ri, ', ci:', ci);
         });
 
+      xs.setSelector(12, 8);
       setTimeout(() => {
         // xs.loadData([{ rows }]);
         xs.cellText(14, 3, 'cell-text').reRender();
